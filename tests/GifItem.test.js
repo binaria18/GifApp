@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { GifItem } from '../src/components/GifItem';
 
-describe('Test GifGrid', () => {
+describe('Test gifItem', () => {
     it('Debe mostrar la imagen con el URL y el ALT indicados', () => {
         render(<GifItem gif={{ id: '1', title: 'Test Title', url: 'https://example.com/test.gif' }} />);
         const img = screen.getByRole('img');

@@ -6,7 +6,8 @@ export const useFetchGifs = ( category ) => {
 
     useEffect( () => {
         setIsLoading(true)
-        getGifs( category, setMisGifs ) 
+        const newGifs = getGifs( category )
+        newGifs.then( gifs => setMisGifs(gifs) ) 
         setIsLoading(false)
     }
     , [ category ] ) 
