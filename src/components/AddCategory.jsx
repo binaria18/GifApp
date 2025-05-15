@@ -17,10 +17,12 @@ export const AddCategory = ( { setCategories, categories } ) => {
     }
     const onsubmit = (e) => {
         e.preventDefault()
+        setInputValue('')
+        document.getElementById('category').value = ''
     }
     return (
         <>
-            <form action="#" onSubmit={ (e) => onsubmit(e) }>
+            <form onSubmit={ (e) => onsubmit(e) } aria-label='form'>
                 <input 
                     onChange={(e) => setInputValue(e.target.value)} 
                     placeholder='Nueva categoría'
