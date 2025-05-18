@@ -14,15 +14,19 @@ describe('Test formulario Categorías', () => {
     })
     it('Debe llamar el setCategories si el input tiene un valor', () => {
 
-        render(<AddCategory setCategories={ () => {} } />)
+        const adCategory = jest.fn(); // Crea una función simulada que permite afirmar que fue llamada
+
+        render(<AddCategory setCategories={ adCategory } />)
         const inputBuscador = screen.getByRole('textbox');
         const form = screen.getByRole('form');
-
         fireEvent.input( inputBuscador, { target: { value: valor } } )
         fireEvent.submit( form );
         screen.debug();
         expect( inputBuscador.value ).toBe('');
-        //expect( setCategories ).toHaveBeenCalled();
+        
+        expect( adCategory ).toHaveBeenCalled();
+        expect( adCategory ).toHaveBeenCalledTimes(1); // Cuántas veces se ha llamado
+
     })
 
 });

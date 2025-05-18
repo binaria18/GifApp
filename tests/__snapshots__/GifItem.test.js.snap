@@ -18,3 +18,22 @@ exports[`Test GifGrid Debe hacer match con el Snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`Test gifItem Debe hacer match con el Snapshot 1`] = `
+<div>
+  <div
+    class="gifCard"
+  >
+    <img
+      alt="Test Title"
+      class="gifCard"
+      src="https://example.com/test.gif"
+    />
+    <div
+      class="gifText"
+    >
+      Test Title
+    </div>
+  </div>
+</div>
+`;

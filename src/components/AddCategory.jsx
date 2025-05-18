@@ -7,8 +7,8 @@ export const AddCategory = ( { setCategories, categories } ) => {
 
     const adCategory = () => {
         if(inputValue.trim().length <= 1) return
-        if(categories.includes(inputValue)) return
-        setCategories([...categories, inputValue])
+        if(categories?.includes(inputValue)) return
+        setCategories([inputValue])
     }
 
     const limpiarFormulario = () => {
@@ -17,6 +17,7 @@ export const AddCategory = ( { setCategories, categories } ) => {
     }
     const onsubmit = (e) => {
         e.preventDefault()
+        adCategory()    
         setInputValue('')
         document.getElementById('category').value = ''
     }
@@ -28,7 +29,7 @@ export const AddCategory = ( { setCategories, categories } ) => {
                     placeholder='Nueva categoría'
                     type="text" 
                     id="category"/>
-                <button onClick={adCategory} id="btnAddCategory">Agregar</button>
+                <button type="submit" id="btnAddCategory">Agregar</button>
                 <button onClick={limpiarFormulario} id="btnLimpiar">Limpiar</button>
             </form>
         </>
